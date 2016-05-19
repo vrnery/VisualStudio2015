@@ -1,0 +1,63 @@
+﻿@model Lab01_ApresentacaoMVC.Models.Filme
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Filme</title>
+</head>
+<body>
+    <div>
+        <h4>Cadastro de Filme</h4>
+        <hr />
+        @using (Html.BeginForm())
+        {
+            <fieldset>
+                <legend>Dados Principais</legend>
+                <div class="label">@Html.LabelFor(Model => Model.Titulo)</div>
+                <div class="form-control">@Html.EditorFor(Model => Model.Titulo)</div>
+                <div class="label">@Html.LabelFor(Model => Model.Genero)</div>
+                <div class="form-control">@Html.EditorFor(Model => Model.Genero)</div>
+                <div class="label">@Html.LabelFor(Model => Model.Assistido)</div>
+                <div class="form-control">@Html.EditorFor(Model => Model.Assistido)</div>
+                <p><input type="submit" value="Salvar"/></p>
+            </fieldset>
+        }
+        @*<dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Titulo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Genero)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Genero)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Assistido)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Assistido)
+            </dd>
+
+        </dl>*@
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
